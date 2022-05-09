@@ -28,14 +28,28 @@ function renderMovieData(event) {
         const movieGenre = data.Genre;
         const movieActors = data.Actors;
         const moviePlot = data.Plot;
-        // Add variables to the DOM
-        $movieOnlyResults.append("\n\n\nTitle: " + movieTitle)
-        $movieOnlyResults.append(". Year: " + movieYear)
-        $movieOnlyResults.append(". Rating: " + movieRating)
-        $movieOnlyResults.append(". Release: " + movieRelease)
-        $movieOnlyResults.append(". Genre: " + movieGenre)
-        $movieOnlyResults.append(". Actors: " + movieActors)
-        $movieOnlyResults.append(". Plot: " + moviePlot)
-        $movieOnlyResults.append(moviePoster)
+        // Add variables and line breaks to the DOM
+        $movieOnlyResults.append("Title: " + movieTitle);
+        lineBreak = document.createElement("br");
+        $movieOnlyResults.append(lineBreak);
+        $movieOnlyResults.append("Year: " + movieYear);
+        lineBreak = document.createElement("br");
+        $movieOnlyResults.append(lineBreak);
+        $movieOnlyResults.append("Rating: " + movieRating);
+        lineBreak = document.createElement("br");
+        $movieOnlyResults.append(lineBreak);
+        $movieOnlyResults.append("Release: " + movieRelease);
+        lineBreak = document.createElement("br");
+        $movieOnlyResults.append(lineBreak);
+        $movieOnlyResults.append("Genre: " + movieGenre);
+        lineBreak = document.createElement("br");
+        $movieOnlyResults.append(lineBreak);
+        $movieOnlyResults.append("Actors: " + movieActors);
+        lineBreak = document.createElement("br");
+        $movieOnlyResults.append(lineBreak);
+        $movieOnlyResults.append("Plot: " + moviePlot);
+        lineBreak = document.createElement("br");
+        $movieOnlyResults.append(lineBreak);
+        $movieOnlyResults.append(moviePoster);
     })
 }
