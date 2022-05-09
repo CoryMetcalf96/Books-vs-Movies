@@ -1,5 +1,3 @@
-
-
 .navigation {
     background-color: antiquewhite;
     list-style: none;
@@ -58,7 +56,7 @@ h1 {
     background-color: rgb(172, 194, 135);
 }
 
-.search-button:hover{
+.search-button:hover {
     background-color: rgb(210, 227, 179);
 }
 
