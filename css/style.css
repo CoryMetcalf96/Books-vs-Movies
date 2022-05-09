@@ -61,3 +61,14 @@ h1 {
 .search-button:hover{
     background-color: rgb(210, 227, 179);
 }
+
+#movie-only-div {
+    width: 800px;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+#movieTitle {
+    margin: 0 auto;
+    align-items: center;
+}
