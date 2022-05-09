@@ -34,7 +34,7 @@ h1 {
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    font-size: 22px;
+    font-size: 23px;
     font-family: "Poppins";
 }
 
@@ -56,4 +56,8 @@ h1 {
     color: white;
     font-size: 25px;
     background-color: rgb(172, 194, 135);
+}
+
+.search-button:hover{
+    background-color: rgb(210, 227, 179);
 }
