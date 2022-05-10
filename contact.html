@@ -28,14 +28,24 @@
     <div class="info-and-search">
         <header>
             <br>
-            <h1>Is There a Movie?</h1>
-            <p id="directions">Welcome to Books vs. Movies - if you're just looking for a summary for any film title then feel free to enter the title below and search! If you're looking for a summary based on the title of the book or a comparison between a book and its movie version, use the navigation bar above.</p>
+            <h1>Contact Me</h1>
+            <p id="directions">Need to contact me? Fill out the form below:</p>
+            <div class="container">
+                <form id="contact-form" onsubmit="sendEmail(); reset(); return false;">
+                    <h3>CONTACT ME</h3>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="text" id="phone" placeholder="Phone" required>
+                    <textarea id="message" rows="4" placeholder="How can I help you?"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
             <br>
             <br>
             <br>
         </header>
     </div>
-
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 
 </html>
