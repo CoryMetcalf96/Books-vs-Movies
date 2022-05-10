@@ -56,14 +56,16 @@ function renderMovieData(event) {
 
 function sendEmail() {
     Email.send({
-        Host : "smtp.yourisp.com",
-        Username : "username",
-        Password : "password",
+        Host : "smtp.gmail.com",
+        Username : "corymetcalftest@gmail.com",
+        Password : "Someday2234",
         To : 'corymetcalf96@gmail.com',
-        From : "you@isp.com",
-        Subject : "This is the subject",
-        Body : "And this is the body"
+        From : document.getElementById("email").ariaValueMax,
+        Subject : "Books vs. Movies Contact Form",
+        Body : "Name: " + document.getElementById("name").value + "<br> Email:" + document.getElementById("email").value + "<br> Phone: " + 
+        document.getElementById("phone").value + "<br> Message" + 
+        document.getElementById("message").value 
     }).then(
-      message => alert(message)
+      message => alert("Message Sent Successfully")
     );
 }
