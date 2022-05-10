@@ -38,6 +38,7 @@ function renderMovieData(event) {
         const movieGenre = data.Genre;
         const movieActors = data.Actors;
         const moviePlot = data.Plot;
+
         // Add variables and line breaks to the DOM
         $movieOnlyResults.append("Title: " + movieTitle);
         lineBreak = document.createElement("br");
@@ -73,20 +74,50 @@ function renderBookData(event) {
     
     // Pull data from API
     $.ajax(BOOKURL1 + userInput + BOOKURL2).then(function (data) {
-        console.log(data)
+        // Cycle through books to find english version w/ an author and poster.
+        bookNumber = 0;
+        while (data.items[bookNumber].volumeInfo.language != "en"){
+            bookNumber++;
+        }
+        while (data.items[bookNumber].volumeInfo.authors == undefined){
+            bookNumber++;
+        }
+        while (data.items[bookNumber].volumeInfo.imageLinks.thumbnail == undefined){
+            bookNumber++;
+        }
         // Assign data to preset variables for filter check later on.
-        const bookTitle = data.items[0].volumeInfo.title;
-        console.log(bookTitle);
-        const bookYear = data.items[0].volumeInfo.publishedDate;
-        console.log(bookYear);     
-        const bookRating = data.items[0].volumeInfo.maturityRating;
-        console.log(bookRating);
-        const bookGenre = data.items[0].volumeInfo.categories;
-        console.log(bookGenre);
-        const bookPlot = data.items[0].volumeInfo.description;
-        console.log(bookPlot);
-        const bookPoster = `<img src="${data.items[0].volumeInfo.imageLinks.thumbnail}"/>`
-        console.log(bookPoster);
+        const bookTitle = data.items[bookNumber].volumeInfo.title;
+        // console.log(bookTitle);
+        const bookAuthor = data.items[bookNumber].volumeInfo.authors;
+        // console.log(bookAuthor);
+        const bookYear = data.items[bookNumber].volumeInfo.publishedDate;
+        // console.log(bookYear);     
+        const bookGenre = data.items[bookNumber].volumeInfo.categories;
+        // console.log(bookGenre);
+        const bookPlot = data.items[bookNumber].volumeInfo.description;
+        // console.log(bookPlot);
+        const bookPoster = `<img src="${data.items[bookNumber].volumeInfo.imageLinks.thumbnail}"/>` // don't forget to check for the poster existance before appending
+        // console.log(bookPoster);
+
+        // Add variables and linebreaks to the DOM
+        $bookOnlyResults.append("Title: " + bookTitle);
+        lineBreak = document.createElement("br");
+        $bookOnlyResults.append(lineBreak);
+        $bookOnlyResults.append("Author: " + bookAuthor);
+        lineBreak = document.createElement("br");
+        $bookOnlyResults.append(lineBreak);
+        $bookOnlyResults.append("Year: " + bookYear);
+        lineBreak = document.createElement("br");
+        $bookOnlyResults.append(lineBreak);
+        $bookOnlyResults.append("Genre: " + bookGenre);
+        lineBreak = document.createElement("br");
+        $bookOnlyResults.append(lineBreak);
+        $bookOnlyResults.append("Plot: " + bookPlot);
+        lineBreak = document.createElement("br");
+        $bookOnlyResults.append(lineBreak);
+        $bookOnlyResults.append(bookPoster);
+        lineBreak = document.createElement("br");
+        $bookOnlyResults.append(lineBreak);
     })
 }
 
