@@ -39,28 +39,42 @@ function renderMovieData(event) {
         const movieActors = data.Actors;
         const moviePlot = data.Plot;
 
-        // Add variables and line breaks to the DOM
-        $movieOnlyResults.append("Title: " + movieTitle);
-        lineBreak = document.createElement("br");
-        $movieOnlyResults.append(lineBreak);
-        $movieOnlyResults.append("Release: " + movieRelease);
-        lineBreak = document.createElement("br");
-        $movieOnlyResults.append(lineBreak);
-        $movieOnlyResults.append("Rating: " + movieRating);
-        lineBreak = document.createElement("br");
-        $movieOnlyResults.append(lineBreak);
-        $movieOnlyResults.append("Genre: " + movieGenre);
-        lineBreak = document.createElement("br");
-        $movieOnlyResults.append(lineBreak);
-        $movieOnlyResults.append("Actors: " + movieActors);
-        lineBreak = document.createElement("br");
-        $movieOnlyResults.append(lineBreak);
-        $movieOnlyResults.append("Plot: " + moviePlot);
-        lineBreak = document.createElement("br");
-        $movieOnlyResults.append(lineBreak);
-        $movieOnlyResults.append(moviePoster);
-        lineBreak = document.createElement("br")
-        $movieOnlyResults.append(lineBreak);
+        // Add variables and line breaks to the DOM if the filters are checked.
+        if ($('#movieTitleCB').is(":checked")){
+            $movieOnlyResults.append("Title: " + movieTitle);
+            lineBreak = document.createElement("br");
+            $movieOnlyResults.append(lineBreak);
+        }
+        if ($('#movieReleaseCB').is(":checked")){
+            $movieOnlyResults.append("Release: " + movieRelease);
+            lineBreak = document.createElement("br");
+            $movieOnlyResults.append(lineBreak);
+        }
+        if ($('#movieRatingCB').is(":checked")){
+            $movieOnlyResults.append("Rating: " + movieRating);
+            lineBreak = document.createElement("br");
+            $movieOnlyResults.append(lineBreak);
+        }
+        if ($('#movieGenreCB').is(":checked")){
+            $movieOnlyResults.append("Genre: " + movieGenre);
+            lineBreak = document.createElement("br");
+            $movieOnlyResults.append(lineBreak);
+        }
+        if ($('#movieActorsCB').is(":checked")){
+            $movieOnlyResults.append("Actors: " + movieActors);
+            lineBreak = document.createElement("br");
+            $movieOnlyResults.append(lineBreak);
+        }
+        if ($('#moviePlotCB').is(":checked")){
+            $movieOnlyResults.append("Plot: " + moviePlot);
+            lineBreak = document.createElement("br");
+            $movieOnlyResults.append(lineBreak);
+        }
+        if ($('#moviePosterCB').is(":checked")){
+            $movieOnlyResults.append(moviePoster);
+            lineBreak = document.createElement("br")
+            $movieOnlyResults.append(lineBreak);
+        }
     })
 }
 
@@ -121,6 +135,7 @@ function renderBookData(event) {
     })
 }
 
+// Contact Form
 function sendEmail() {
     Email.send({
         Host : "smtp.gmail.com",

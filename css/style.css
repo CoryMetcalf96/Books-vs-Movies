@@ -124,3 +124,14 @@ form button {
 #book-only-results {
     font-size: 25px;
 }
+
+.filters {
+    font-family: "Poppins";
+    font-size: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: antiquewhite;
+}
