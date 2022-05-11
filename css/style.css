@@ -135,3 +135,17 @@ form button {
     flex-direction: row;
     background-color: antiquewhite;
 }
+
+h3 {
+    font-family: "Poppins";
+}
+
+#movie-filter-title {
+    margin-top: 55px;
+}
+
+#bam-div {
+    margin-top: 220px;
+    width: 800px;
+    font-size: 20px;
+}

@@ -29,7 +29,7 @@
         <header>
             <br>
             <h1>Is There a Book?</h1>
-            <p id="directions">Welcome to Books vs. Movies - if you're just looking for a summary for any film title then feel free to enter the title below and search! If you're looking for a summary based on the title of the book or a comparison between a book and its movie version, use the navigation bar above.</p>
+            <p id="directions">Welcome to Books vs. Movies - if you're just looking for a summary for any book title then feel free to enter the title below and search for the most relevant option! If you're looking for a summary based on the title of a film or a comparison between a book and its movie version, use the navigation bar above.</p>
             <br>
             <br>
             <br>
@@ -37,6 +37,14 @@
         <div class="search">
             <input type="text" id="book-only-input" class="search-bar"></input>
             <button id="book-only-button" class="search-button" type="button">Search</button>
+        </div>
+        <div class="filters">
+            <label><input type="checkbox" id="bookTitleCB" />Title</label>
+            <label><input type="checkbox" id="bookAuthorCB" />Author</label>
+            <label><input type="checkbox" id="bookYearCB" />Year</label>
+            <label><input type="checkbox" id="bookGenreCB" />Genre</label>
+            <label><input type="checkbox" id="bookPlotCB" />Plot</label>
+            <label><input type="checkbox" id="bookPosterCB" />Poster</label>
         </div>
     </div>
     <div id="book-only-div">
