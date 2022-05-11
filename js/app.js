@@ -22,6 +22,10 @@ $movieOnlyButton.click(renderMovieData);
 $bookOnlyButton.click(renderBookData);
 $bamButton.click(renderMovieAndBookData)
 
+
+// TWITTER URL:
+
+
 // FUNCTIONS
 // MOVIE-ONLY-DATA
 function renderMovieData(event) {
@@ -77,9 +81,14 @@ function renderMovieData(event) {
         }
         if ($('#moviePosterCB').is(":checked")){
             $movieOnlyResults.append(moviePoster);
-            lineBreak = document.createElement("br")
+            lineBreak = document.createElement("br");
             $movieOnlyResults.append(lineBreak);
         }
+        let twitterButton = document.createElement('button');
+        twitterButton.classList.add("twitter-button");
+        twitterButton.innerHTML = "Tweet About This Movie";
+        $movieOnlyResults.append(twitterButton);
+        twitterButton.addEventListener('click', tweetThis);
     })
 }
 
@@ -154,6 +163,11 @@ function renderBookData(event) {
             lineBreak = document.createElement("br");
             $bookOnlyResults.append(lineBreak);
         }
+        let twitterButton = document.createElement('button');
+        twitterButton.classList.add("twitter-button");
+        twitterButton.innerHTML = "Tweet About This Movie";
+        $bookOnlyResults.append(twitterButton);
+        twitterButton.addEventListener('click', tweetThis);
     })
 }
 
@@ -296,7 +310,18 @@ function renderMovieAndBookData(event) {
             lineBreak = document.createElement("br");
             $bamResults.append(lineBreak);
         }
+        let twitterButton = document.createElement('button');
+        twitterButton.classList.add("twitter-button");
+        twitterButton.innerHTML = "Tweet About This";
+        $bamResults.append(twitterButton);
+        twitterButton.addEventListener('click', tweetThis);
     })
+}
+
+
+function tweetThis() {
+    let twitterUrl = `https://twitter.com/intent/tweet`;
+    window.open(twitterUrl, '_blank')
 }
 
 // Google Books API Key: AIzaSyCaHzs19q5vLpvTyOOBoIYIf0sfFKbA7zY
