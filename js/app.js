@@ -38,7 +38,7 @@ function renderMovieData(event) {
 
     // Pull data from API
     $.ajax(MOVIEURL + userInput).then(function (data) {
-
+        console.log(data)
         // Assign the data from the API to set preset variables for filter.
         const moviePoster = `<img src="${data.Poster}"/>`;
         const movieTitle = data.Title;
@@ -47,13 +47,16 @@ function renderMovieData(event) {
         const movieGenre = data.Genre;
         const movieActors = data.Actors;
         const moviePlot = data.Plot;
-
+        console.log("variables names")
         // Add variables and line breaks to the DOM if the filters are checked.
         if ($('#movieTitleCB').is(":checked")){
             $movieOnlyResults.append("Title: " + movieTitle);
             lineBreak = document.createElement("br");
             $movieOnlyResults.append(lineBreak);
         }
+
+        console.log("title attempted.")
+
         if ($('#movieReleaseCB').is(":checked")){
             $movieOnlyResults.append("Movie Release: " + movieRelease);
             lineBreak = document.createElement("br");
