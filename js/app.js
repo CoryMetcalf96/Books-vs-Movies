@@ -17,13 +17,14 @@ const $bamInput = $('#bam-input');
 const $bamButton = $('#bam-button');
 const $bamResults = $('#bam-results')
 
+// REFRESH BUTTON
+$refreshButton = $('#refresh-button')
+
 // EVENT LISTENERS
 $movieOnlyButton.click(renderMovieData);
 $bookOnlyButton.click(renderBookData);
-$bamButton.click(renderMovieAndBookData)
-
-
-// TWITTER URL:
+$bamButton.click(renderMovieAndBookData);
+$refreshButton.click(reloadPage);
 
 
 // FUNCTIONS
@@ -31,14 +32,13 @@ $bamButton.click(renderMovieAndBookData)
 function renderMovieData(event) {
     // Prevent screen refresh
     event.preventDefault();
-
     // Get user input from the input form
     const userInput = $movieOnlyInput.val();
     console.log(userInput);
 
     // Pull data from API
     $.ajax(MOVIEURL + userInput).then(function (data) {
-        console.log(data);
+
         // Assign the data from the API to set preset variables for filter.
         const moviePoster = `<img src="${data.Poster}"/>`;
         const movieTitle = data.Title;
@@ -322,6 +322,10 @@ function renderMovieAndBookData(event) {
 function tweetThis() {
     let twitterUrl = `https://twitter.com/intent/tweet`;
     window.open(twitterUrl, '_blank')
+}
+
+function reloadPage() {
+    window.location.reload();
 }
 
 // Google Books API Key: AIzaSyCaHzs19q5vLpvTyOOBoIYIf0sfFKbA7zY
