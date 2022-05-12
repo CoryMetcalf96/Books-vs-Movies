@@ -1,6 +1,6 @@
 // ELEMENT REFERENCES
 // MOVIE API
-const MOVIEURL = 'http://www.omdbapi.com/?apikey=18427c60&t=';
+const MOVIEURL = 'https://www.omdbapi.com/?apikey=18427c60&t=';
 const $movieOnlyInput = $('#movie-only-input');
 const $movieOnlyButton = $('#movie-only-button');
 const $movieOnlyResults = $('#movie-only-results');
