@@ -12,8 +12,9 @@ An application that pulls from 2 API's, allowing you to form a comparison betwee
 * HTML
 * CSS
 
-## Screenshots
+## Sketch vs. Screenshots
 
+![Sketch](https://i.imgur.com/q9GB2AS.png)
 ![Book Search Engine](https://i.imgur.com/Gm2ZTzF.png)
 ![Using the Search Enine](https://i.imgur.com/zAMR0Sn.png)
 ![After Searching](https://i.imgur.com/krKClcj.png)
